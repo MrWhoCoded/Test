@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form in Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            max-width: 600px;
+            border-collapse: collapse;
+            margin: auto;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        input, select, textarea {
+            width: 95%;  /* Adjusted width to fit within borders */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;  /* Added to include padding in width calculation */
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;  /* Full width for the submit button */
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .checkbox-label {
+            display: inline-block;  /* Ensure the label is on the same line as the checkbox */
+            margin-left: 5px;  /* Small margin for aesthetics */
+        }
+    </style>
+</head>
+<body>
+
+<h2>Contact Form</h2>
+
+<form id="contactForm" action="/submit_form.php" method="POST">
+    <table>
+        <tr>
+            <th colspan="2">Please Fill Out This Form</th>
+        </tr>
+        <tr>
+            <td><label for="address">Address:</label></td>
+            <td><input type="text" id="address" name="address" required placeholder="Enter your address"></td>
+        </tr>
+        <tr>
+            <td><label for="phone">Phone Number:</label></td>
+            <td><input type="tel" id="phone" name="phone" required placeholder="Enter your phone number"></td>
+        </tr>
+        <tr>
+            <td><label for="contactMethod">Preferred Contact Method:</label></td>
+            <td>
+                <select id="contactMethod" name="contactMethod" required>
+                    <option value="">Select a method</option>
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                    <option value="sms">SMS</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="subscribe">Subscribe to Newsletter:</label></td>
+            <td>
+                <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+                <label for="subscribe" class="checkbox-label">Yes, I want to receive updates</label>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="comments">Additional Comments:</label></td>
+            <td><textarea id="comments" name="comments" rows="4" placeholder="Your comments here..."></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <input type="submit" value="Submit">
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
